@@ -6,5 +6,8 @@ module.exports = {
     title: `CSC 496 Gatsby Site`,
     siteUrl: `https://www.yourdomain.tld`,
   },
-  plugins: [],
+  plugins: [
+    "gatsby-plugin-image",
+    "gatsby-plugin-sharp",
+  ],
 }
