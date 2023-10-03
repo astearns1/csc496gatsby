@@ -17,4 +17,4 @@ jobs:
           cd csc496
           ls
           git pull
-          gatsby build
+          /home/student04/.nvm/versions/node/v18.17.1/bin/gatsby build
