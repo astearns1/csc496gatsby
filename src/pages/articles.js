@@ -13,9 +13,9 @@ const articleTemplate = props => {
     return(
         <>
             <h1>{data.nodeFood?.title}</h1>
-            <h2>Written By: {data.nodeFood?.author.displayName}</h2>
+            <h3>Written By: {data.nodeFood?.author.displayName}</h3>
             <img src={data.nodeFood?.mediaImage.mediaImage.url} alt="Practicing" />
-            <div dangerouslySetInnerHTML={{ __html: data.nodeFood?.body.value}} />
+            <div dangerouslySetInnerHTML={{ __html: data.nodeFood?.body.processed}} />
         </>        
     )
 }

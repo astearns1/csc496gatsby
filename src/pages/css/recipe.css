@@ -1,0 +1,76 @@
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    align-content: center;
+    column-gap: 10px;
+    row-gap: 10px;
+}
+
+.imageDiv{
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+    object-fit: contain;
+}
+
+img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.preparationTime{
+    grid-column: 3 / span 1;
+    grid-row: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cookingTime{
+    grid-column: 4 / span 1;
+    grid-row: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.servings{
+    grid-column: 3 / span 1;
+    grid-row: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.difficulty{
+    grid-column: 4 / span 1;
+    grid-row: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ingredients{
+    grid-column: 1 / span 1;
+    grid-row: 3 / span 2;
+}
+
+.instructions{
+    grid-column: 2 / span 3;
+    grid-row: 3 / span 2;
+}
+
+table{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+th{
+    margin-bottom: 5px;
+}
+
+td{
+    border-bottom: 1px solid black;
+}

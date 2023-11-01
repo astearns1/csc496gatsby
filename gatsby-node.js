@@ -37,24 +37,34 @@ exports.createPages = async({ actions, graphql }) => {
             graphql(
             `
             query MyQuery {
-                Drupal {
-                  nodeRecipes(first: 100) {
-                    edges {
-                      node {
-                        changed
-                        id
-                        cookingTime
-                        created
-                        path
-                        status
-                        title
-                        preparationTime
-                        numberOfServings
+              Drupal {
+                nodeRecipes(first: 10) {
+                  edges {
+                    node {
+                      changed
+                      id
+                      cookingTime
+                      created
+                      path
+                      status
+                      title
+                      preparationTime
+                      numberOfServings
+                      ingredients
+                      difficulty
+                      mediaImage {
+                        mediaImage {
+                          url
+                        }
+                      }
+                      recipeInstruction {
+                        processed
                       }
                     }
                   }
                 }
               }
+            }
             `
             ).then(result => {
                 // show during build/dev
@@ -63,7 +73,7 @@ exports.createPages = async({ actions, graphql }) => {
                 if(result.errors){
                     reject(result.errors)
                 }
-                console.log("PAGES");
+                console.log("RECIPES");
                 console.log(result.data.Drupal.nodeRecipes);
                 const pages = result.data.Drupal.nodeRecipes.edges;
 
@@ -92,28 +102,29 @@ exports.createPages = async({ actions, graphql }) => {
             graphql(
                 `
                 query MyQuery {
-                    Drupal {
-                      nodeArticles(first: 100) {
-                        edges {
-                          node {
-                            title
-                            mediaImage {
-                              mediaImage {
-                                url
-                              }
-                            }
-                            body {
-                              value
-                            }
-                            author {
-                              displayName
-                            }
-                            path
+                  Drupal {
+                    nodeArticles(first: 100) {
+                      edges {
+                        node {
+                          body {
+                            processed
                           }
+                          author {
+                            displayName
+                          }
+                          changed
+                          mediaImage {
+                            mediaImage {
+                              url
+                            }
+                          }
+                          title
+                          path
                         }
                       }
                     }
                   }
+                }
                 `
             ).then(result => {
                 // show during build/dev
@@ -122,7 +133,7 @@ exports.createPages = async({ actions, graphql }) => {
                 if(result.errors){
                     reject(result.errors)
                 }
-                console.log("PAGES");
+                console.log("ARTICLES");
                 console.log(result.data.Drupal.nodeArticles);
                 const pages = result.data.Drupal.nodeArticles.edges;
 
