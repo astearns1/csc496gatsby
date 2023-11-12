@@ -27,6 +27,14 @@ module.exports = {
         url: `https://csc496f22demo.tldr.dev/graphql`,
       },
     },
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /\.inline\.svg$/
+        }
+      }
+    },
     "gatsby-plugin-mdx",
     "gatsby-transformer-sharp",
   ],
