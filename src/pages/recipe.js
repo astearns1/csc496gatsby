@@ -21,8 +21,8 @@ const pageTemplate = props => {
 
     return(
         <>
-            <h4>{data.nodeFood?.title}</h4>
-            
+            <h2>{data.nodeFood?.title}</h2>
+            <h4 dangerouslySetInnerHTML={{ __html: data.nodeFood?.summary.processed}} />
             <div className="grid-container">
                 <div className="imageDiv">
                     <img src={data.nodeFood?.mediaImage.mediaImage.url} alt="Practice" />

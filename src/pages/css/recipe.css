@@ -10,7 +10,11 @@
 .imageDiv{
     grid-column: 1 / span 2;
     grid-row: 1 / span 2;
-    object-fit: contain;
+    object-fit: cover;
+    height: 80%;
+    width: 80%;
+    margin: auto;
+
 }
 
 img{

@@ -60,6 +60,9 @@ exports.createPages = async({ actions, graphql }) => {
                       recipeInstruction {
                         processed
                       }
+                      summary {
+                        processed
+                      }
                     }
                   }
                 }
