@@ -4,6 +4,6 @@ import Servings from "../servings.js"
 
 describe('Servings component', () => {
     test('Renders the servings component correctly', () => {
-        render(<Servings preparationTime={parseFloat("8")} />)
+        render(<Servings numberOfServings={parseFloat("8")} />)
     })
 })

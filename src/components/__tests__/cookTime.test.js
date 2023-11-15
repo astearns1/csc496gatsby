@@ -4,6 +4,6 @@ import CookTime from "../cookTime.js"
 
 describe('Cook Time component', () => {
     test('Renders the prep time component correctly', () => {
-        render(<CookTime preparationTime={parseFloat("15")} />)
+        render(<CookTime cookingTimeTime={parseFloat("15")} />)
     })
 })

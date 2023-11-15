@@ -4,6 +4,6 @@ import Difficulty from "../difficulty.js"
 
 describe('Difficulty component', () => {
     test('Renders the difficulty component correctly', () => {
-        render(<Difficulty preparationTime={"easy"} />)
+        render(<Difficulty difficulty={"easy"} />)
     })
 })

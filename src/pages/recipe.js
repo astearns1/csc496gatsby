@@ -1,3 +1,4 @@
+// Step 1: Import necessary items
 import React from "react"
 import CookTime from "../components/cookTime"
 import './css/recipe.css'
@@ -5,20 +6,25 @@ import PrepTime from "../components/prepTime"
 import Servings from "../components/servings"
 import Difficulty from "../components/difficulty"
 
+// Step 2: Define the component
 const pageTemplate = props => {
-
+    // Retrieve the data from graphql query in gatsby-node.js
     const data = {
         nodeFood: props.pageContext.data
     }
 
+    // Create array to hold the list of the ingredients
     const ingredientsList = []
     console.log(data)
     console.log("Hello class! I just printed this page!")
     console.log(data.nodeFood?.title)
+    // Iterate through each value of the ingredients from the query
+    // and create as a row in a table for later
     data.nodeFood?.ingredients.forEach((data) => {
         ingredientsList.push(<tr><td>{data}</td></tr>)
     })
-
+    
+    // Create page, utilizes grid structure in CSS to layout the various elements
     return(
         <>
             <h2>{data.nodeFood?.title}</h2>
@@ -41,9 +47,7 @@ const pageTemplate = props => {
                 </div>
                 <div className="ingredients">
                     <table>
-                        <tr>
-                            <th>Ingredients</th>
-                        </tr>
+                        <tr><th>Ingredients</th></tr>
                         {ingredientsList}
                     </table>
                 </div>
@@ -56,4 +60,5 @@ const pageTemplate = props => {
     )
 }
 
+// Step 3: Export component
 export default pageTemplate

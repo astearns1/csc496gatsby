@@ -1,5 +1,9 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import React from "react"
-import {render} from "@testing-library/react"
+import {getByTestId, render} from "@testing-library/react"
 import PrepTime from "../prepTime.js"
 
 describe('Prep Time component', () => {
